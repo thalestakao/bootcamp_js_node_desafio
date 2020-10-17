@@ -115,7 +115,15 @@ export const get = async (req, res, next) => {
 };
 export const totalGrade = async (req, res, next) => {
   try {
+    // /grades?student=Thales Baliero Takáo&subject=01 - Javascript --> Query Params
+    // req: {
+    //   query: {
+    //     student: 'Thales Baliero Takáo',
+    //     subject: '01 - Javascript'
+    //   }
+    // }
     const { student, subject } = req.query;
+
     if (!student || !subject) {
       throw new Error('Student e subject são obrigatórios');
     }
@@ -123,12 +131,14 @@ export const totalGrade = async (req, res, next) => {
     if (!data || !data.grades.length) {
       throw new Error('Não há registros disponíveis.');
     }
+
     const total = data.grades.reduce((acc, grade) => {
       if (grade.student === student && grade.subject === subject) {
         return grade.value + acc;
       }
       return acc;
     }, 0);
+
     const result = {
       student,
       subject,

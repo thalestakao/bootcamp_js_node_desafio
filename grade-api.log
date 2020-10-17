@@ -1807,3 +1807,40 @@
 }
 2020-10-12T21:44:49.153Z [grade-api] info: Chanlange API Started
 2020-10-12T21:44:52.394Z [grade-api] error: GET /grade - Não há registro com o ID consultado.
+2020-10-17T16:00:15.370Z [grade-api] info: Chanlange API Started
+2020-10-17T16:10:50.955Z [grade-api] info: GET /subject 01 - JavaScript,02 - Node,03 - React,04 - MongoDB
+2020-10-17T16:12:31.363Z [grade-api] info: Chanlange API Started
+2020-10-17T16:14:49.810Z [grade-api] info: Chanlange API Started
+2020-10-17T16:16:28.677Z [grade-api] info: Chanlange API Started
+2020-10-17T16:19:52.680Z [grade-api] info: Chanlange API Started
+2020-10-17T16:38:27.416Z [grade-api] info: Chanlange API Started
+2020-10-17T16:39:35.128Z [grade-api] info: Chanlange API Started
+2020-10-17T16:42:03.212Z [grade-api] info: Chanlange API Started
+2020-10-17T16:42:46.766Z [grade-api] info: Chanlange API Started
+2020-10-17T16:45:49.880Z [grade-api] info: Chanlange API Started
+2020-10-17T16:47:19.849Z [grade-api] info: Chanlange API Started
+2020-10-17T16:49:51.212Z [grade-api] info: Chanlange API Started
+2020-10-17T16:51:56.178Z [grade-api] info: GET /grade/:id {
+  "id": 1,
+  "student": "Loiane Groner",
+  "subject": "01 - JavaScript",
+  "type": "Fórum",
+  "value": 15,
+  "timestamp": "2020-05-19T18:21:24.958Z"
+}
+2020-10-17T16:56:24.965Z [grade-api] info: Chanlange API Started
+2020-10-17T17:09:59.529Z [grade-api] error: PUT /grade - Id, student, subject, type e value são obrigatórios
+2020-10-17T17:10:19.410Z [grade-api] error: PUT /grade - O registro solicitado para modificação não existe.
+2020-10-17T17:10:28.513Z [grade-api] info: PUT /grade {
+  "id": 1,
+  "student": "Loiane Groner",
+  "subject": "01 - JavaScript",
+  "type": "Fórum",
+  "value": 3,
+  "timestamp": "2020-05-19T18:21:24.958Z",
+  "studente": "Thales Baliero Takáo"
+}
+2020-10-17T17:10:30.618Z [grade-api] info: Chanlange API Started
+2020-10-17T17:17:10.529Z [grade-api] info: Chanlange API Started
+2020-10-17T17:18:53.964Z [grade-api] info: Chanlange API Started
+2020-10-17T17:22:22.883Z [grade-api] info: Chanlange API Started

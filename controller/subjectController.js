@@ -10,7 +10,7 @@ export const index = async (_, res, next) => {
       throw new Error('Não há registros disponíveis');
     }
     const uniqueSubjects = subjects.filter(
-      (grade, index, self) => index === self.findIndex((t) => t === grade)
+      (subject, index, self) => index === self.findIndex((t) => t === subject)
     );
     res.send(uniqueSubjects);
     logger.info(`GET /subject ${uniqueSubjects}`);

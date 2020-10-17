@@ -121,15 +121,19 @@ function renderTypesBetter(types) {
   });
   M.FormSelect.init(typeSelectorBetter);
 }
-
+//renderizar a tabela
 function renderTable(grades, msg) {
+  //msg inicia como undefined, então o valor do if é falso, logo não será executado a primeira vez.
   if (msg) {
     msgTopList.textContent = msg;
     setTimeout(() => {
       msgTopList.textContent = '';
     }, 4500);
   }
+
+  //tbody é limpo, não há mais elementos filhos
   tbody.innerHTML = '';
+
   grades.forEach((grade) => {
     const tr = document.createElement('tr');
     const tdId = document.createElement('td');
@@ -146,6 +150,13 @@ function renderTable(grades, msg) {
     tdSubject.textContent = grade.subject;
     tdType.textContent = grade.type;
     tdValue.textContent = grade.value;
+    // <tr>
+    //   <td>1</td>
+    //   <td>Loiane Groner</td>
+    //   <td>01 - Javascript</td>
+    //   <td>Fórum</td>
+    //   <td>10</td>
+    // </tr>;
 
     editIcon.classList.add('material-icons');
     editIcon.textContent = 'edit';
@@ -157,6 +168,18 @@ function renderTable(grades, msg) {
     deleteIcon.id = grade.id;
     deleteIcon.addEventListener('click', deleteGrade);
 
+    // <tr>
+    //   <td>1</td>
+    //   <td>Loiane Groner</td>
+    //   <td>01 - Javascript</td>
+    //   <td>Fórum</td>
+    //   <td>10</td>
+    //   <td>
+    //     <i class="material-icons"  click="editGrade()" >edit</i>
+    //     <i class="material-icons" click="deleteGrade()" >delete</i>
+    //   </td>
+    // </tr>;
+
     tdAction.appendChild(deleteIcon);
     tdAction.appendChild(editIcon);
 
@@ -166,8 +189,10 @@ function renderTable(grades, msg) {
     tr.appendChild(tdType);
     tr.appendChild(tdValue);
     tr.appendChild(tdAction);
+    //Terminei de montar a linha
 
     tbody.appendChild(tr);
+    //adiciono a linha o tbody.
   });
 }
 
@@ -354,7 +379,7 @@ async function editGrade(event) {
   if (json.error) {
     msg = json.error;
     const refreshedGrade = await fetchGrades();
-    renderTable(refreshedGrade);
+    renderTable(refreshedGrade, msg);
   }
   currentGradeEdit = json;
   instance.select('test1');
