@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./assets/css/materialize.css"
+      media="screen,projection"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Thales B. Takáo</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+      </nav>
+      <section>
+        <div class="row">
+          <div class="col s12">
+            <ul class="tabs">
+              <li class="tab col s2"><a href="#test1">1 - Inserir Notas</a></li>
+              <li class="tab col s2">
+                <a class="active" href="#test2">2, 3, 4 - Lista de Notas</a>
+              </li>
+              <li class="tab col s2">
+                <a href="#test3">5 - Nota total de um aluno</a>
+              </li>
+              <li class="tab col s2">
+                <a href="#test4">6 - Média de Notas</a>
+              </li>
+              <li class="tab col s2">
+                <a href="#test5">7 - Melhores Notas</a>
+              </li>
+            </ul>
+          </div>
+          <div id="test1" class="col s12">
+            <div class="row">
+              <div class="col s12">
+                <div class="card">
+                  <span class="card-title">Inserir Nota</span>
+                  <div class="card-content">
+                    <div class="row">
+                      <form action="" class="col s12">
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input type="text" name="student" id="student" />
+                            <label for="student">Student</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s4">
+                            <input type="text" name="subject" id="subject" />
+                            <label for="subject">Subject</label>
+                          </div>
+
+                          <div class="input-field col s4">
+                            <input type="text" name="type" id="type" />
+                            <label for="type">Type</label>
+                          </div>
+
+                          <div class="input-field col s4">
+                            <input type="text" name="value" id="value" />
+                            <label for="value">Value</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <span id="msgResult"></span>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="card-action">
+                    <a href="" id="save">Save</a>
+                    <a href="" id="clear">Clear</a>
+                    <a href="" id="new">Nova nota</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="test2" class="col s12">
+            <span id="msgTopList"></span>
+            <div class="row">
+              <div class="col s10">
+                <div class="input-field">
+                  <input type="text" name="searchId" id="searchId" />
+                  <label for="searchId">Informe o ID</label>
+                </div>
+              </div>
+              <div class="input-field col s2">
+                <a class="waves-effect waves-light btn" id="searchButton"
+                  >Consultar</a
+                >
+              </div>
+            </div>
+            <table>
+              <thead>
+                <th>Id</th>
+                <th>Student</th>
+                <th>Subject</th>
+                <th>Type</th>
+                <th>Value</th>
+                <th>Action</th>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div id="test3" class="col s12">
+            <div class="row">
+              <div class="input-field col s3">
+                <select name="subjectSelector" id="subjectSelector">
+                  <option value="" disabled selected>Escolha um subject</option>
+                </select>
+              </div>
+              <div class="input-field col s7">
+                <input type="text" name="studentSearch" id="studentSearch" />
+                <label for="studentSearch">Student</label>
+              </div>
+              <div class="input-field col s2">
+                <button
+                  class="waves-effect waves-light btn"
+                  id="totalCalculate"
+                >
+                  TOTAL
+                </button>
+              </div>
+            </div>
+            <div class="row">TOTAL: <span id="total"></span></div>
+          </div>
+          <div id="test4" class="col s12">
+            <div class="row">
+              <div class="input-field col s5">
+                <select name="subjectSelectorMean" id="subjectSelectorMean">
+                  <option value="" disabled selected>Escolha um subject</option>
+                </select>
+              </div>
+              <div class="input-field col s5">
+                <select name="typeSelectorMean" id="typeSelectorMean">
+                  <option value="" disabled selected>Escolha um type</option>
+                </select>
+              </div>
+              <div class="input-field col s2">
+                <button class="waves-effect waves-light btn" id="meanCalculate">
+                  MÉDIA
+                </button>
+              </div>
+            </div>
+            <div class="row">MÉDIA: <span id="mean"></span></div>
+          </div>
+          <div id="test5" class="col s12">
+            <div class="row">
+              <div class="input-field col s5">
+                <select name="subjectSelectorBetter" id="subjectSelectorBetter">
+                  <option value="" disabled selected>Escolha um subject</option>
+                </select>
+              </div>
+              <div class="input-field col s5">
+                <select name="typeSelectorBetter" id="typeSelectorBetter">
+                  <option value="" disabled selected>Escolha uma opção</option>
+                </select>
+              </div>
+              <div class="input-field col s2">
+                <button
+                  class="waves-effect waves-light btn"
+                  id="listBetterGrades"
+                >
+                  LISTAR
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <table>
+                <thead>
+                  <th>Id</th>
+                  <th>Student</th>
+                  <th>Subject</th>
+                  <th>Type</th>
+                  <th>Value</th>
+                </thead>
+                <tbody id="betterGradesTbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script type="text/javascript" src="./assets/js/materialize.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
